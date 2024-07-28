@@ -5,12 +5,12 @@ This project has some useful utils for tae projects
 ## installation
 
 ```bash
-  npm install
+  npm i @taenaive/tae-vite-utils
 ```
 
-## distribution
+## usage
 
 ```bash
-npm run changeset
-
+import { poll as pollWrapper } from "@taenaive/tae-vite-utils"
+pollWrapper( asyncfunc, ...arg )
 ```
