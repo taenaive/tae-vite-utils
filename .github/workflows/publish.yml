@@ -15,7 +15,7 @@ jobs:
                 registry-url: 'https://registry.npmjs.org'
 
             - run: npm install --frozen-lockfile
-            - name: 'Create Relase Pull Request or Publish'
+            - name: Create Relase Pull Request or Publish
               id: changesets
               uses: changests/action@v1
               with:
@@ -23,5 +23,3 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 NPM_TOKE: ${{ secrets.NPM_TOKEN }}
-
-            - run: npm run ci
