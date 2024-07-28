@@ -1,18 +1,28 @@
 {
-  "name": "tae-vite-utils",
+  "name": "@taenaive/tae-vite-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taenaive/tae-vite-utils.git"
+  },
   "version": "1.0.0",
   "description": "various react typescript vite utilites",
-  "main": "index.js",
+  "private": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vitest",
     "test": "vitest run",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "ci": "npm run lint && npm run test && npm run build"
+    "ci": "npm run lint && npm run test && npm run build",
+    "release": "npm run lint && npm run test && npm run build && changeset publish",
+    "changeset": "changeset"
   },
   "author": "Tae Yoon",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.7",
     "@types/node": "^22.0.0",
     "tsup": "^8.2.3",
     "typescript": "^5.5.4",
