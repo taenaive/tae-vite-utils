@@ -1,0 +1,11 @@
+{
+  "name": "tae-vite-utils",
+  "version": "1.0.0",
+  "description": "various react typescript vite utilites",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "Tae Yoon",
+  "license": "MIT"
+}
