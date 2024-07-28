@@ -13,7 +13,7 @@ jobs:
               with:
                 node-version: 18.x
                 registry-url: 'https://registry.npmjs.org'
-
+            - run: npm install --frozen-lockfile
             - run: npm run ci
             - run: npm publish --provenance --access public
               env:
