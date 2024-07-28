@@ -4,8 +4,17 @@
   "description": "various react typescript vite utilites",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "dev": "vitest",
+    "test": "vitest run",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
   },
   "author": "Tae Yoon",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  }
 }
