@@ -1,12 +1,16 @@
 export function sleep(ms:number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-const GlobalRetryLimit = 3;
 
 export async function poll(fn: (...args: any ) => Promise<any>, ...args:any): Promise<void> {
-    for (let i = 0; i < GlobalRetryLimit; i++) {
-        //  console.log(`Waiting ${i}...`);
-        await sleep(1000);
-        await fn(...args)
+    pollNtimes(3, fn, ...args)
+}
+
+export async function pollNtimes(ms:number, fn: (...args: any ) => Promise<any>, ...args:any) : Promise<void>  {
+    const RetryLimit = ms;
+        for (let i = 0; i < RetryLimit; i++) {
+            //  console.log(`Waiting ${i}...`);
+            await sleep(1000);
+            await fn(...args)
     }
 }
